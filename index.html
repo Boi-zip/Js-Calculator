@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=0.891, maximum-scale=0.891, user-scalable=no">
+    <title>Calc</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="light-mode">
+    <table>
+      <tr>
+        <input type="text" name="" value="" readonly id="txt2">
+        <br>
+        <input type="text" name="" value="" readonly id="txt" ondblclick="removech()">
+      </tr>
+      <tr>
+        <td><button type="button" name="button" id="re" onclick="txt.value = ''; txt2.value = ''; numberup(); loadnum = true">C</button></td>
+        <td><button type="button" name="button" id="op" onclick="txt.value = txt.value + '('; numberup()">(</button></td>
+        <td><button type="button" name="button" id="cl" onclick="txt.value = txt.value + ')'; numberup()">)</button></td>
+        <td><button type="button" name="button" id="an" onclick="savenumb(); numberup()">M</button></td>
+      </tr>
+      <tr>
+        <td><button type="button" name="button" id="n1" onclick="txt.value = txt.value + '1'; numberup()">1</button></td>
+        <td><button type="button" name="button" id="n2" onclick="txt.value = txt.value + '2'; numberup()">2</button></td>
+        <td><button type="button" name="button" id="n3" onclick="txt.value = txt.value + '3'; numberup()">3</button></td>
+        <td><button type="button" name="button" id="mu" onclick="txt.value = txt.value + ' * '">*</button></td>
+      </tr>
+      <tr>
+        <td><button type="button" name="button" id="n4" onclick="txt.value = txt.value + '4'; numberup()">4</button></td>
+        <td><button type="button" name="button" id="n5" onclick="txt.value = txt.value + '5'; numberup()">5</button></td>
+        <td><button type="button" name="button" id="n6" onclick="txt.value = txt.value + '6'; numberup()">6</button></td>
+        <td><button type="button" name="button" id="de" onclick="txt.value = txt.value + ' / ';">/</button></td>
+      </tr>
+      <tr>
+        <td><button type="button" name="button" id="n7" onclick="txt.value = txt.value + '7'; numberup()">7</button></td>
+        <td><button type="button" name="button" id="n8" onclick="txt.value = txt.value + '8'; numberup()">8</button></td>
+        <td><button type="button" name="button" id="n9" onclick="txt.value = txt.value + '9'; numberup()">9</button></td>
+        <td><button type="button" name="button" id="mi" onclick="txt.value = txt.value + ' - '">-</button></td>
+      </tr>
+      <tr>
+        <td><button type="button" name="button" id="n." onclick="txt.value = txt.value + '.'; numberup()">.</button></td>
+        <td><button type="button" name="button" id="n0" onclick="txt.value = txt.value + '0'; numberup()">0</button></td>
+        <td><button type="button" name="button" id="eq" onclick="txt2.value = txt.value + ' ='; txt.value = numbers; loadnum = false">=</button></td>
+        <td><button type="button" name="button" id="plu" onclick="txt.value = txt.value + ' + ';">+</button></td>
+      </tr>
+    </table>
+    <button type="button" name="button" class="buttonLight" onclick="lightmode()">Light mode</button>
+    <button type="button" name="button" class="buttonDark" onclick="darkmode()">Dark mode</button>
+    <p>0.6 - 0.2 is NOT 0.4 (according to js)</p>
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
