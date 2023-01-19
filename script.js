@@ -5,6 +5,11 @@ let numbers = txt.value;
 let savenum = '';
 let loadnum = false
 let mode = localStorage.getItem("mode");
+let mobilemode = (typeof window.orientation !== "undefined") 
+      || (navigator.userAgent.indexOf('IEMobile') !== -1
+      );
+
+
  function numberup() {
    numbers = eval(txt.value) }
 
@@ -38,4 +43,19 @@ if (txt.value.charAt(txt.value.length - 1) == ' ') {
 else {
   txt.value = txt.value.substr(0, txt.value.length - 1)
 }
+}
+
+if(mobilemode == false){
+  txt.readOnly = false
+  txt.addEventListener("keydown", (e) => {
+    if(e.key ==="Enter"){
+      numberup()
+      txt2.value = txt.value + ' ='; 
+      txt.value = numbers; loadnum = false
+    }
+    if(isFinite(e.key)){
+      numberup()
+    }
+
+  })
 }
